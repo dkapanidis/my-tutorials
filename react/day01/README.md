@@ -11,7 +11,7 @@ To bootstrap the project we'll use [vite]
 [vite]:https://vitejs.dev/
 
 ```sh
-yarn init vite my-react-workshop --template react
+yarn create vite my-react-workshop --template react-ts
 cd my-react-workshop
 yarn
 ```
