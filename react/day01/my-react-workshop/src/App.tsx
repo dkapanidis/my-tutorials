@@ -5,15 +5,18 @@ import './App.css';
 import About from './pages/About';
 import Home from './pages/Home';
 import KeyboardShortcuts from "./shortcuts/KeyboardShortcuts";
+import SideMenu from "./ui/layouts/SideMenu";
 
 function App() {
   return (
     <Router>
       <KeyboardShortcuts />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <SideMenu>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </SideMenu>
     </Router>
   )
 }

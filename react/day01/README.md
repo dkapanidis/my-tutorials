@@ -80,6 +80,53 @@ yarn dev
 
 ![Preview](imgs/tailwindcss.png)
 
+## Add Tooltips
+
+![tooltips](imgs/tooltips.png)
+
+For tooltips we use the `material-ui`:
+
+```bash
+yarn add @material-ui/core
+```
+
+Add `src/ui/tooltips/TooltipWithShortcut.tsx`:
+
+```tsx
+// src/ui/tooltips/TooltipWithShortcut.tsx
+
+import { Tooltip, withStyles } from '@material-ui/core';
+
+const HtmlTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: 'transparent',
+    color: 'none',
+  },
+}))(Tooltip);
+
+interface TooltipWithShortcutProps {
+  description?: string,
+  shortcut?: string,
+  children: any,
+  placement?: "bottom" | "left" | "right" | "top" | "bottom-end" | "bottom-start" | "left-end" | "left-start" | "right-end" | "right-start" | "top-end" | "top-start" | undefined
+}
+function TooltipWithShortcut({ description, shortcut, children, placement }: TooltipWithShortcutProps) {
+  return (
+    <HtmlTooltip title={
+      <div className="bg-gray-800 p-1 border rounded-md border-gray-700 px-2 text-xs text-gray-200">
+          {description}
+          {shortcut && <span className="text-xs text-gray-200"> · <code className="bg-gray-700 inset-0 px-1 py-0.5 rounded-sm text-xs">G</code> then <code className="bg-gray-700 inset-0 px-1 py-0.5 rounded-sm text-xs">{shortcut}</code></span>}
+      </div>
+    } aria-label="add" enterDelay={500} leaveDelay={200} placement={placement}>
+      {children}
+    </ HtmlTooltip>
+  )
+}
+
+export default TooltipWithShortcut
+```
+
+
 ## Add Page Navigation
 
 To add page navigation we'll use [react-router-dom](https://reactrouter.com/web/guides/quick-start):
@@ -255,7 +302,6 @@ Add `src/ui/layouts/SideMenu.tsx`
 // src/ui/layouts/SideMenu.tsx
 
 import { Home, Info, Movie } from '@material-ui/icons';
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import SplitPane from 'react-split-pane';
 import { useLocalStorage } from 'react-use';
@@ -301,7 +347,6 @@ function NavButton({ exact = false, to, title, description, shortcut, icon }: Na
     </TooltipWithShortcut>
   </div>
 }
-
 ```
 
 React Split Pane needs some CSS to be included on `src/App.css`:
@@ -375,8 +420,8 @@ import Home from './pages/Home';
 function App() {
   return (
     <Router>
+      <KeyboardShortcuts />
 +      <SideMenu>
-        <KeyboardShortcuts />
         <Switch>
 			  	<Route exact path="/"><Home /></Route>
           <Route exact path="/about"><About /></Route>
