@@ -1,7 +1,4 @@
-// src/ui/tooltips/TooltipWithShortcut.tsx
-
 import { Tooltip, withStyles } from '@material-ui/core';
-import React from 'react'
 
 const HtmlTooltip = withStyles((theme) => ({
   tooltip: {

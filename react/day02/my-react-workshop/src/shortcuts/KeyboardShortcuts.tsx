@@ -1,5 +1,4 @@
 import useMousetrap from '../hooks/use-mousetrap';
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function KeyboardShortcuts() {
