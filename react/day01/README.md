@@ -4,7 +4,7 @@ During this day we setup the react app, install [Tailwind CSS], configure page n
 
 [Tailwind CSS]:https://tailwindcss.com/
 
-### Setup React App
+## Setup React App
 
 To bootstrap the project we'll use [create-react-app]
 
@@ -21,7 +21,7 @@ Start app
 yarn start
 ```
 
-### Setup Vite
+## Setup Vite
 
 We'll use [vite] as build tool.
 
@@ -82,7 +82,7 @@ Start app
 yarn start
 ```
 
-### Setup Tailwind CSS
+## Setup Tailwind CSS
 
 We'll use [Tailwind CSS] as a utility-first CSS framework.
 
@@ -140,7 +140,7 @@ yarn start
 
 ![Preview](imgs/tailwindcss.png)
 
-### Add Page Navigation
+## Add Page Navigation
 
 To add page navigation we'll use [react-router-dom](https://reactrouter.com/web/guides/quick-start):
 
@@ -202,7 +202,7 @@ To test it open app (`yarn start`) and navigate on:
 - [http://localhost:3000/](http://localhost:3000/about)
 - [http://localhost:3000/about](http://localhost:3000/about)
 
-### Add Keyboard shortcuts
+## Add Keyboard shortcuts
 
 ![keyboard shortcuts](imgs/keyboard-shortcuts.png)
 
@@ -295,13 +295,13 @@ function App() {
 export default App
 ```
 
-### Add SideMenu
+## Add SideMenu
 
 Add SideMenu with icons, active and hoverable states and persisted sizeable pane:
 
 ![sidemenu](imgs/sidemenu.gif)
 
-## The components
+### The components
 
 For the above SideMenu we use the following components:
 
@@ -313,7 +313,7 @@ For the above SideMenu we use the following components:
 yarn add @material-ui/core @material-ui/icons react-use react-split-pane
 ```
 
-## The Code
+### The Code
 
 Add `src/ui/layouts/SideMenu.tsx`
 
@@ -424,7 +424,7 @@ React Split Pane needs some CSS to be included on `src/App.css`:
 }
 ```
 
-## The App
+### The App
 
 Connect SideMenuLayout to `App.tsx`:
 
@@ -454,3 +454,47 @@ function App() {
 
 export default App;
 ```
+
+## Add ARCHITECTURE.md
+
+Architecture markdown should include a high-level architecture documentation.
+
+Add the following as starting point:
+
+````markdown
+# Architecture
+
+### Directory Layout
+
+Before you start, take a moment to see how the project structure looks like:
+
+```sh
+.
+├── /src/                       # The source code of the application
+|   | # Typescript
+│   ├── /models/                # Data models
+│   ├── /actions/               # The actions to external APIs
+│   ├── /stores/                # The stores that handle declarative state of the APIs actions.
+|   | # UI Components
+|   ├── /components/            # Reusable basic components of the UI that are isolated (e.g. buttons)
+|   ├── /layouts/               # Reusable layouts of the UI
+|   ├── /cards/                 # Reusable components of the UI that can use stores
+|   ├── /pages/                 # Pages of the application
+├── /dist/                      # The folder for compiled output
+├── /node_modules/              # The dependencies
+├── .gitignore                  # List of files that should be ignored by git
+├── ARCHITECTURE.md             # ARCHITECTURE file
+├── index.html                  # The index.html file
+├── Dockerfile                  # Commands for building a Docker image for production
+├── README.md                   # README file
+├── package-lock.json           # Fixed versions of all the dependencies
+├── package.json                # The list of 3rd party libraries and utilities
+├── postcss.config.js           # Configuration of PostCSS used by Tailwind
+├── tailwind.config.js          # Configuration of Tailwind
+├── tsconfig.json
+```
+
+**NOTE**: Source code is ordered by dependency tree (each directory can only use upper ones)
+````
+
+**Next**: [Day 02](../day02/README.md)
