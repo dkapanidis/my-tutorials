@@ -75,7 +75,7 @@ Learn React
 Start app
 
 ```sh
-yarn start
+yarn dev
 ```
 
 ![Preview](imgs/tailwindcss.png)
@@ -91,8 +91,6 @@ yarn add react-router-dom @types/react-router-dom
 Create two pages `src/pages/Home.tsx`:
 
 ```jsx
-import React from 'react';
-
 export default function Home() {
   return (
     <h1>Home Page</h1>
@@ -103,8 +101,6 @@ export default function Home() {
 `src/pages/About.tsx`:
 
 ```jsx
-import React from 'react';
-
 export default function About() {
   return (
     <h1>About</h1>
@@ -115,7 +111,6 @@ export default function About() {
 Update App to use navigation:
 
 ```jsx
-import React from 'react';
 import {
   BrowserRouter as Router, Route, Routes
 } from "react-router-dom";
@@ -137,7 +132,7 @@ function App() {
 export default App;
 ```
 
-To test it open app (`yarn start`) and navigate on:
+To test it open app (`yarn dev`) and navigate on:
 
 - [http://localhost:3000/](http://localhost:3000/about)
 - [http://localhost:3000/about](http://localhost:3000/about)
