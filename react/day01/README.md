@@ -83,3 +83,48 @@ yarn start
 ### Setup Tailwind CSS
 
 We'll use [Tailwind CSS] as a utility-first CSS framework.
+
+Install Tailwind
+
+```sh
+yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest
+```
+
+Create configuration files
+
+```sh
+npx tailwindcss init -p
+```
+
+In your `tailwind.config.js` file, configure the `purge` option with the paths to all of your pages and components so Tailwind can tree-shake unused styles in production builds:
+
+```diff
+// tailwind.config.js
+module.exports = {
+- purge: [],
++ purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+Replace `src/index.css` with the following to include Tailwind:
+
+```css
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Start app
+
+```sh
+yarn start
+```
