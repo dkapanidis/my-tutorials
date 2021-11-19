@@ -10,3 +10,4 @@ In the past I've been collecting and creating tutorials on for each tech separat
 
 * [Laptop](laptop/README.md)
 * [Python](python/README.md)
+* [React](react/README.md)
