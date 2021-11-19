@@ -139,3 +139,65 @@ yarn start
 ```
 
 ![Preview](tailwindcss.png)
+
+### Add Page Navigation
+
+To add page navigation we'll use [react-router-dom](https://reactrouter.com/web/guides/quick-start):
+
+```jsx
+yarn add react-router-dom @types/react-router-dom
+```
+
+Create two pages `src/pages/Home.tsx`:
+
+```jsx
+import React from 'react';
+
+export default function Home() {
+  return (
+    <h1>Home Page</h1>
+  );
+}
+```
+
+`src/pages/About.tsx`:
+
+```jsx
+import React from 'react';
+
+export default function About() {
+  return (
+    <h1>About</h1>
+  );
+}
+```
+
+Update App to use navigation:
+
+```jsx
+import React from 'react';
+import {
+  BrowserRouter as Router, Route, Routes
+} from "react-router-dom";
+import './App.css';
+import About from './pages/About';
+import Home from './pages/Home';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/about" element={<About />}/>
+      </Routes>
+    </Router>
+  )
+}
+
+export default App;
+```
+
+To test it open app (`yarn start`) and navigate on:
+
+- [http://localhost:3000/](http://localhost:3000/about)
+- [http://localhost:3000/about](http://localhost:3000/about)
