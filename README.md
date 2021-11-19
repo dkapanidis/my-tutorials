@@ -9,3 +9,4 @@ In the past I've been collecting and creating tutorials on for each tech separat
 ### Table of Contents
 
 * [Laptop](laptop/README.md)
+* [Python](python/README.md)
