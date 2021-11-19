@@ -84,13 +84,13 @@ yarn dev
 
 To add page navigation we'll use [react-router-dom](https://reactrouter.com/web/guides/quick-start):
 
-```jsx
+```sh
 yarn add react-router-dom @types/react-router-dom
 ```
 
 Create two pages `src/pages/Home.tsx`:
 
-```jsx
+```tsx
 export default function Home() {
   return (
     <h1>Home Page</h1>
@@ -100,7 +100,7 @@ export default function Home() {
 
 `src/pages/About.tsx`:
 
-```jsx
+```tsx
 export default function About() {
   return (
     <h1>About</h1>
@@ -110,7 +110,7 @@ export default function About() {
 
 Update App to use navigation:
 
-```jsx
+```tsx
 import {
   BrowserRouter as Router, Route, Routes
 } from "react-router-dom";
@@ -185,16 +185,15 @@ Create `src/shortcuts/KeyboardShortcuts.tsx`:
 
 ```tsx
 import useMousetrap from '../hooks/use-mousetrap';
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function KeyboardShortcuts() {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   // shortcuts
-  useMousetrap("g h", () => history.push("/"));
-  useMousetrap("g m", () => history.push("/movies"));
-  useMousetrap("g a", () => history.push("/about"));
+  useMousetrap("g h", () => navigate("/"));
+  useMousetrap("g m", () => navigate("/movies"));
+  useMousetrap("g a", () => navigate("/about"));
 
   return <></>
 }

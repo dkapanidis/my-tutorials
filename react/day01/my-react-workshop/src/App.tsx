@@ -4,13 +4,15 @@ import {
 import './App.css';
 import About from './pages/About';
 import Home from './pages/Home';
+import KeyboardShortcuts from "./shortcuts/KeyboardShortcuts";
 
 function App() {
   return (
     <Router>
+      <KeyboardShortcuts />
       <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/about" element={<About />}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   )

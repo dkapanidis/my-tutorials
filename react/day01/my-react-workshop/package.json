@@ -7,7 +7,9 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@types/mousetrap": "^1.6.8",
     "@types/react-router-dom": "^5.3.2",
+    "mousetrap": "^1.6.5",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-router-dom": "^6.0.2"
