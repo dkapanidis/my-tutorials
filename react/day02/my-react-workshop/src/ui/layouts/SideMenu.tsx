@@ -36,7 +36,7 @@ interface NavButtonProps { to: string, title: string, description?: string, shor
 function NavButton({ exact = false, to, title, description, shortcut, icon }: NavButtonProps) {
   return <div>
     <TooltipWithShortcut description={description} shortcut={shortcut} placement="right">
-      <NavLink data-tip data-for={title} activeClassName="text-blue-400  bg-gray-800" exact={exact} to={to} className="
+      <NavLink data-tip data-for={title} to={to} className="
   my-1 mx-4 px-3 py-2 rounded-lg text-sm font-medium
  hover:bg-gray-800 flex items-center
   focus:outline-none space-x-1
