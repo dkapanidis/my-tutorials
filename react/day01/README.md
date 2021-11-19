@@ -25,6 +25,8 @@ yarn start
 
 We'll use [vite] as build tool.
 
+[vite]:https://vitejs.dev/
+
 Install packages
 
 ```sh
@@ -123,8 +125,17 @@ Replace `src/index.css` with the following to include Tailwind:
 @tailwind utilities;
 ```
 
+Let's test it by adding a styled paragraph on src/App.tsx:
+
+```diff
+Learn React
++ <p className="bg-blue-900 rounded-lg m-10 p-10 text-green-400">Hello TailwindCSS Styles</p>
+```
+
 Start app
 
 ```sh
 yarn start
 ```
+
+![Preview](tailwindcss.png)
