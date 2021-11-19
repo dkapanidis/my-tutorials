@@ -5,14 +5,19 @@ import {
 import './App.css';
 import About from './pages/About';
 import Home from './pages/Home';
+import KeyboardShortcuts from './shortcuts/KeyboardShortcuts';
+import SideMenu from './ui/layouts/SideMenu';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/about" element={<About />}/>
-      </Routes>
+      <SideMenu>
+        <KeyboardShortcuts />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </SideMenu>
     </Router>
   )
 }
