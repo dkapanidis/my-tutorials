@@ -13,12 +13,13 @@ To bootstrap the project we'll use [vite]
 ```sh
 yarn init vite my-react-workshop --template react
 cd my-react-workshop
+yarn
 ```
 
 Start app
 
 ```sh
-yarn start
+yarn dev
 ```
 
 ## Setup Tailwind CSS
