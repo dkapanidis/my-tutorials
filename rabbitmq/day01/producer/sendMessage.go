@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"time"
@@ -23,7 +24,7 @@ func main() {
 	host := os.Getenv("RABBITMQ_HOST")
 
 	// Here we connect to RabbitMQ or send a message if there are any errors connecting.
-	conn, err := amqp.Dial("amqp://" + user + ":" + password + "@" + host + ":5672")
+	conn, err := amqp.Dial(fmt.Sprintf("amqp://%s:%s@%s:5672", user, password, host))
 	failOnError(err, "Failed to connect to RabbitMQ")
 	defer conn.Close()
 
