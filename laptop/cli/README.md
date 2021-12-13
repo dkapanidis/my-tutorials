@@ -44,6 +44,7 @@ Some k8s related CLI tools:
 * [pack](https://buildpacks.io/): CLI for building apps using Cloud Native Buildpacks.
 * [krew](https://github.com/kubernetes-sigs/krew): 📦 Find and install kubectl plugins.
 * [tektoncd-cli](https://github.com/tektoncd/cli): A CLI for interacting with Tekton.
+* [argocd](https://argo-cd.readthedocs.io/en/stable/cli_installation/): GitOps continuous delivery tool for Kubernetes.
 * [skaffold](https://skaffold.dev/): Local Kubernetes Development.
 * [kubernetic](https://www.kubernetic.com/): The Kubernetes Desktop Client - Cluster management, simplified.
 
@@ -60,6 +61,7 @@ Some archived CLI tools:
 * [upterm](https://github.com/railsware/upterm): an IDE in the world of terminals.
 * [pow](http://pow.cx/): Pow is a zero-config Rack server for Mac OS X.
 * [figlet](http://www.figlet.org/): FIGlet is a program for making large letters out of ordinary text.
+* [cowsay](https://en.wikipedia.org/wiki/Cowsay): generates ASCII art pictures of a cow with a message.
 * [vagrant](https://www.vagrantup.com/): Development Environments Made Easy.
 * [hugo](https://gohugo.io/): open-source static site generator.
 
@@ -71,6 +73,14 @@ Some DB tools:
 
 * [sqlite](https://www.sqlite.org/index.html): small, fast, self-contained, high-reliability, full-featured, SQL database engine.
 
-Some bootstrapping tools:
+Some Java tools:
 
 * [springboot](https://spring.io/projects/spring-boot): Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".
+
+Some Go tools:
+
+* [upx](https://upx.github.io/): the Ultimate Packer for eXecutables.
+
+3rd party tools:
+
+* [stripe](https://stripe.com/docs/stripe-cli): developer tool to help you build, test, and manage your integration with Stripe directly from your terminal.
