@@ -45,6 +45,7 @@ Some k8s related CLI tools:
 * [krew](https://github.com/kubernetes-sigs/krew): 📦 Find and install kubectl plugins.
 * [tektoncd-cli](https://github.com/tektoncd/cli): A CLI for interacting with Tekton.
 * [skaffold](https://skaffold.dev/): Local Kubernetes Development.
+* [kubernetic](https://www.kubernetic.com/): The Kubernetes Desktop Client - Cluster management, simplified.
 
 Recording & Live coding CLI tools:
 
