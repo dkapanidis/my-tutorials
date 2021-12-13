@@ -35,14 +35,41 @@ Some k8s related CLI tools:
 * [helm](https://helm.sh/): The package manager for Kubernetes.
 * [octant](https://octant.dev/): Visualize your Kubernetes workloads.
 * [minikube](https://minikube.sigs.k8s.io/docs/start/): minikube is local Kubernetes.
+* [kind](https://github.com/kubernetes-sigs/kind): Kubernetes IN Docker.
 * [rbac-lookup](https://github.com/FairwindsOps/rbac-lookup): RBAC Lookup is a CLI that allows you to easily find Kubernetes roles and cluster roles bound to any user, service account, or group name.
 * [kubetail](https://github.com/johanhaleby/kubetail): Bash script to tail Kubernetes logs from multiple pods at the same time.
+* [stern](https://github.com/wercker/stern): ⎈ Multi pod and container log tailing for Kubernetes.
 * [kubeseal](https://github.com/bitnami-labs/sealed-secrets): A Kubernetes controller and tool for one-way encrypted Secrets.
 * [k3d](https://k3d.io/): k3d is a lightweight wrapper to run k3s.
 * [pack](https://buildpacks.io/): CLI for building apps using Cloud Native Buildpacks.
+* [krew](https://github.com/kubernetes-sigs/krew): 📦 Find and install kubectl plugins.
+* [tektoncd-cli](https://github.com/tektoncd/cli): A CLI for interacting with Tekton.
+* [skaffold](https://skaffold.dev/): Local Kubernetes Development.
+
+Recording & Live coding CLI tools:
+
+* [keycastr](https://github.com/keycastr/keycastr): KeyCastr, an open-source keystroke visualizer.
+* [doitlive](https://doitlive.readthedocs.io/en/stable/): Because sometimes you need to do it live.
+* [ngrok](https://ngrok.com/): Ngrok exposes local servers behind NATs and firewalls to the public internet over secure tunnels.
+* [tmate](https://tmate.io/): Instant terminal sharing.
 
 Some archived CLI tools:
 
-* [glow](https://github.com/charmbracelet/glow):Render markdown on the CLI, with pizzazz.
+* [glow](https://github.com/charmbracelet/glow): Render markdown on the CLI, with pizzazz.
+* [upterm](https://github.com/railsware/upterm): an IDE in the world of terminals.
 * [pow](http://pow.cx/): Pow is a zero-config Rack server for Mac OS X.
 * [figlet](http://www.figlet.org/): FIGlet is a program for making large letters out of ordinary text.
+* [vagrant](https://www.vagrantup.com/): Development Environments Made Easy.
+* [hugo](https://gohugo.io/): open-source static site generator.
+
+Some networking tools:
+
+* [socat](https://www.redhat.com/sysadmin/getting-started-socat): The socat utility is a relay for bidirectional data transfers between two independent data channels.
+
+Some DB tools:
+
+* [sqlite](https://www.sqlite.org/index.html): small, fast, self-contained, high-reliability, full-featured, SQL database engine.
+
+Some bootstrapping tools:
+
+* [springboot](https://spring.io/projects/spring-boot): Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".
