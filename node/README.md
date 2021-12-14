@@ -2,6 +2,10 @@
 
 Node can be installed using `brew`.
 
+## node version
+
+I use the same node version on all projects: `v16.13.1`.
+
 ## nvm
 
 To handle multiple versions use `nvm`.
@@ -17,14 +21,14 @@ Some useful commands:
 ```sh
 # list installed versions
 nvm list
-# list available versions from 17.*
-nvm ls-remote 17
-# install version v17.2.0
-nvm install v17.2.0
+# list available versions from 16.*
+nvm ls-remote 16
+# install version v16.13.1
+nvm install v16.13.1
 # uninstall version 14
 nvm uninstall 14
 # use version (for current shell only)
-nvm use 17
+nvm use 16
 # set default version (for next shells)
-nvm alias default v17.2.0
+nvm alias default v16.13.1
 ```
