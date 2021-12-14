@@ -18,6 +18,14 @@ To set zsh as your default shell, execute the following:
 sudo sh -c "echo $(which zsh) >> /etc/shells" && chsh -s $(which zsh)
 ```
 
+### Update MacOS
+
+To apply software updates of MacOS:
+
+```sh
+softwareupdate --all --install --force
+```
+
 ## Useful CLI Tools
 
 Some generic CLI tools:
