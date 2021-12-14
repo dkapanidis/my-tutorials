@@ -84,3 +84,7 @@ Some Go tools:
 3rd party tools:
 
 * [stripe](https://stripe.com/docs/stripe-cli): developer tool to help you build, test, and manage your integration with Stripe directly from your terminal.
+
+Presentation tools:
+
+* [slidev](https://sli.dev/) Presentation Slides for Developers.
