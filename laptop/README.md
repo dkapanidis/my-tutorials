@@ -8,7 +8,7 @@ I've blogged in more detail about my desktop apps [here](https://www.codingholyg
 
 ### Update
 
-To apply software updates:
+To apply MacOS software updates:
 
 ```sh
 softwareupdate --all --install --force
