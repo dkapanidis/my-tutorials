@@ -32,3 +32,6 @@ docker compose up producer
 
 > NOTE: Make sure the RabbitMQ is running before starting the producer.
 
+open RabbitMQ web console and you can now see messages are sent to the `domain-events` queue.
+
+![RabbitMQ](imgs/rabbitmq.png)
