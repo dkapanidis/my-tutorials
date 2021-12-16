@@ -8,7 +8,7 @@ def print_hello():
 
 
 dag = DAG(
-    "hello_world_dag",
+    "hello_world",
     description="Hello World DAG",
     schedule_interval="0 * * * *",
     start_date=datetime(2021, 1, 1),
@@ -16,7 +16,7 @@ dag = DAG(
 )
 
 hello_operator = PythonOperator(
-    task_id="hello_world_task", python_callable=print_hello, dag=dag
+    task_id="hello_task", python_callable=print_hello, dag=dag
 )
 
 hello_operator

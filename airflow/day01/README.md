@@ -53,6 +53,6 @@ Open browser on http://localhost:8080 and login with `airflow` / `airflow`.
 Unpause the DAG `hello-world` by clicking the toggle button before the name of the DAG. This will trigger the DAG for the first time and we can see on the logs the returned message:
 
 ```
-[2021-12-16, 11:48:25 UTC] {python.py:152} INFO - Done. Returned value was: Hello world from first Airflow DAG!
-[2021-12-16, 11:48:25 UTC] {taskinstance.py:1280} INFO - Marking task as SUCCESS. dag_id=hello_world, task_id=hello_task, execution_date=20211214T120000, start_date=20211216T114824, end_date=20211216T114825
+[2021-12-16, 11:58:40 UTC] {python.py:152} INFO - Done. Returned value was: Hello world from Airflow DAG
+[2021-12-16, 11:58:40 UTC] {taskinstance.py:1280} INFO - Marking task as SUCCESS. dag_id=hello_world, task_id=hello_task, execution_date=20211216T115837, start_date=20211216T115839, end_date=20211216T115840
 ```
