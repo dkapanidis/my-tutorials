@@ -42,30 +42,26 @@ There are different ways to define the dependencies between the DAG tasks:
 
 ## CLI
 
-We can run partially specific tasks by doing the following:
+We can test run specific tasks or entire dags by doing the following:
 
 ```sh
 # Run airflow CLI inside a container in interactive mode
 $ ./airflow bash
+
 ## testing task "op1" from dag "task_dependencies_chain"
 $ airflow tasks test task_dependencies_chain op1 2015-06-01
 ...
-[2021-12-16 12:42:26,047] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'date']
-[2021-12-16 12:42:26,061] {subprocess.py:85} INFO - Output:
-[2021-12-16 12:42:26,066] {subprocess.py:89} INFO - Thu Dec 16 12:42:26 UTC 2021
+[2021-12-17 15:27:36,644] {taskinstance.py:1280} INFO - Marking task as SUCCESS. dag_id=task_dependencies_chain, task_id=op1, execution_date=20150601T000000, start_date=20211217T152736, end_date=20211217T152736
+
 ## testing task "op2" from dag "task_dependencies_chain"
 $ airflow tasks test task_dependencies_chain op2 2015-06-01
 ...
-[2021-12-16 12:43:16,570] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'sleep 5']
-```
+[2021-12-17 15:28:43,122] {taskinstance.py:1280} INFO - Marking task as SUCCESS. dag_id=task_dependencies_chain, task_id=op2, execution_date=20150601T000000, start_date=20211217T152843, end_date=20211217T152843
 
-We can also run the entire DAG to test it:
-
-```sh
 ## testing dag "task_dependencies_chain"
 $ airflow dags test task_dependencies_chain 2021-12-15
 ...
-[2021-12-16 12:47:21,528] {dagrun.py:602} INFO - DagRun Finished: dag_id=tutorial, execution_date=2021-12-15T00:00:00+00:00, run_id=backfill__2021-12-15T00:00:00+00:00, run_start_date=2021-12-16 12:47:06.189703+00:00, run_end_date=2021-12-16 12:47:21.527935+00:00, run_duration=15.338232, state=success, external_trigger=False, run_type=backfill, data_interval_start=2021-12-15T00:00:00+00:00, data_interval_end=2021-12-16T00:00:00+00:00, dag_hash=None
+[2021-12-17 15:29:23,875] {dagrun.py:602} INFO - DagRun Finished: dag_id=task_dependencies_chain, execution_date=2021-12-15T00:00:00+00:00, run_id=backfill__2021-12-15T00:00:00+00:00, run_start_date=2021-12-17 15:29:03.767633+00:00, run_end_date=2021-12-17 15:29:23.875553+00:00, run_duration=20.10792, state=success, external_trigger=False, run_type=backfill, data_interval_start=2021-12-15T00:00:00+00:00, data_interval_end=2021-12-16T00:00:00+00:00, dag_hash=None
 ```
 
 Or we can do a `backfill` to run the DAG multiple times for a specific date range and also register the state in the DB:
@@ -74,6 +70,6 @@ Or we can do a `backfill` to run the DAG multiple times for a specific date rang
 ## backfill dag "task_dependencies_chain"
 $ airflow dags backfill task_dependencies_chain --start-date 2015-06-01 --end-date 2015-06-14
 ...
-[2021-12-16 12:52:36,000] {backfill_job.py:397} INFO - [backfill progress] | finished run 14 of 14 | tasks waiting: 0 | succeeded: 42 | running: 0 | failed: 0 | skipped: 0 | deadlocked: 0 | not ready: 0
+[2021-12-17 15:31:42,921] {backfill_job.py:397} INFO - [backfill progress] | finished run 14 of 14 | tasks waiting: 0 | succeeded: 56 | running: 0 | failed: 0 | skipped: 0 | deadlocked: 0 | not ready: 0
 ```
 
