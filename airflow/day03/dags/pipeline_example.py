@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from airflow.decorators import dag, task
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.providers.postgres.operators.postgres import PostgresOperator
@@ -6,7 +6,13 @@ import requests
 import csv
 
 
-@dag(start_date=datetime(2021, 1, 1), catchup=False, tags=["postgres"])
+@dag(
+    schedule_interval="0 0 * * *",
+    start_date=datetime.today() - timedelta(days=2),
+    dagrun_timeout=timedelta(minutes=60),
+    catchup=False,
+    tags=["postgres"],
+)
 def pipeline_example():
     create_employees_table = PostgresOperator(
         task_id="create_employees_table",
@@ -32,15 +38,6 @@ def pipeline_example():
                  "Leave" integer
              );
 
-          """,
-    )
-
-    drop_employees_table = PostgresOperator(
-        task_id="drop_employees_tables",
-        sql="""
-            DROP TABLE IF EXISTS Employees;
-            DROP TABLE IF EXISTS "Employees_temp";
-            DROP TABLE IF EXISTS Employees_temp;
           """,
     )
 
@@ -87,18 +84,10 @@ def pipeline_example():
             return 1
 
     (
-        drop_employees_table
-        >> [create_employees_table, create_employees_temp_table]
+        [create_employees_table, create_employees_temp_table]
         >> get_data()
         >> merge_data()
     )
-
-
-# (
-#     [create_employees_table, create_employees_temp_table]
-#     >> get_data()
-#     >> drop_employees_table
-# )
 
 
 dag = pipeline_example()
