@@ -40,23 +40,40 @@ There are different ways to define the dependencies between the DAG tasks:
 * `task_dependencies_chain`
 * `task_dependencies_chain_pairwise`
 
-## Postgres Connection
+## CLI
 
-To connect to a postgres database, first create on the UI the connection:
+We can run partially specific tasks by doing the following:
 
-* Conn ID: `postgres_default` (The default connection id used by the postgres operator)
-* Conn Type: `postgres`
-* Host: `postgres` (The connection info can be found on the `docker-compose.yaml` under `AIRFLOW__CORE__SQL_ALCHEMY_CONN` we re-use the running postgres for the example)
-* Schema: `airflow`
-* Login: `airflow`
-* Password: `airflow`
+```sh
+# Run airflow CLI inside a container in interactive mode
+$ ./airflow bash
+## testing task "op1" from dag "task_dependencies_chain"
+$ airflow tasks test task_dependencies_chain op1 2015-06-01
+...
+[2021-12-16 12:42:26,047] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'date']
+[2021-12-16 12:42:26,061] {subprocess.py:85} INFO - Output:
+[2021-12-16 12:42:26,066] {subprocess.py:89} INFO - Thu Dec 16 12:42:26 UTC 2021
+## testing task "op2" from dag "task_dependencies_chain"
+$ airflow tasks test task_dependencies_chain op2 2015-06-01
+...
+[2021-12-16 12:43:16,570] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'sleep 5']
+```
 
-DAGs:
+We can also run the entire DAG to test it:
 
-* `operators_postgres` ([Reference](https://github.com/apache/airflow/tree/main/airflow/providers/postgres/example_dags))
-* `pipeline_example` ([Reference](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#pipeline-example))
+```sh
+## testing dag "task_dependencies_chain"
+$ airflow dags test task_dependencies_chain 2021-12-15
+...
+[2021-12-16 12:47:21,528] {dagrun.py:602} INFO - DagRun Finished: dag_id=tutorial, execution_date=2021-12-15T00:00:00+00:00, run_id=backfill__2021-12-15T00:00:00+00:00, run_start_date=2021-12-16 12:47:06.189703+00:00, run_end_date=2021-12-16 12:47:21.527935+00:00, run_duration=15.338232, state=success, external_trigger=False, run_type=backfill, data_interval_start=2021-12-15T00:00:00+00:00, data_interval_end=2021-12-16T00:00:00+00:00, dag_hash=None
+```
 
-## Pipeline Example
+Or we can do a `backfill` to run the DAG multiple times for a specific date range and also register the state in the DB:
 
-For details read the documentation [here](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html#pipeline-example)
+```sh
+## backfill dag "task_dependencies_chain"
+$ airflow dags backfill task_dependencies_chain --start-date 2015-06-01 --end-date 2015-06-14
+...
+[2021-12-16 12:52:36,000] {backfill_job.py:397} INFO - [backfill progress] | finished run 14 of 14 | tasks waiting: 0 | succeeded: 42 | running: 0 | failed: 0 | skipped: 0 | deadlocked: 0 | not ready: 0
+```
 
