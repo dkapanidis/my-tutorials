@@ -29,6 +29,7 @@ with DAG(
     start_date=datetime.datetime(2020, 2, 2),
     schedule_interval="@once",
     catchup=False,
+    tags=["postgres"]
 ) as dag:
     # [START postgres_operator_howto_guide_create_pet_table]
     create_pet_table = PostgresOperator(
