@@ -1,3 +1,15 @@
+# Airflow Operators
+
+## Setup
+
+```sh
+docker compose up airflow-init
+docker compose up -d
+```
+
+Open browser on http://localhost:8080 and login with `airflow` / `airflow`.
+
+![dags](.imgs/dags.png)
 
 ## Postgres Connection
 

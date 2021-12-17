@@ -10,7 +10,6 @@ import csv
     schedule_interval="0 0 * * *",
     start_date=datetime.today() - timedelta(days=2),
     dagrun_timeout=timedelta(minutes=60),
-    catchup=False,
     tags=["postgres"],
 )
 def pipeline_example():
