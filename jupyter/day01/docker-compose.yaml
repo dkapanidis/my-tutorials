@@ -1,0 +1,7 @@
+# https://github.com/stefanproell/jupyter-notebook-docker-compose
+version:  '3'
+services:
+  notebook:
+      image: jupyter/scipy-notebook:33add21fab64
+      ports:
+        - 8888:8888
