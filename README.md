@@ -15,7 +15,8 @@ In the past I've been collecting and creating tutorials on for each tech separat
 | Coding        | [Python](coding/python) |
 | Coding        | [Node](coding/node)     |
 | Coding        | [React](coding/react)   |
+| Coding        | [Go](coding/go)         |
 | Database      | [MySQL](db/mysql)       |
 | Message Queue | [RabbitMQ](mq/rabbitmq) |
 | ETL           | [Airflow](etl/airflow)  |
-| ETL           | [Jupyter](etl/jupyter)   |
+| ETL           | [Jupyter](etl/jupyter)  |
