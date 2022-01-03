@@ -19,6 +19,6 @@ go run variables/variables.go
 go run data_types/data_types.go
 go run operators/operators.go
 go run pointers/pointers.go
-go run pointers_by_value/pointers_by_value.go
-go run pointers_by_ref/pointers_by_ref.go
+go run loops/loops.go
+go run decision_making/decision_making.go
 ```
