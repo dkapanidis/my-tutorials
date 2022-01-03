@@ -11,3 +11,32 @@ Each day depends on previous lessons learned, but if you know the scope of a spe
 - [Day 2 - Parquet Format](day02/README.md)
 - [Day 3 - Spark SQL, DataFrames and Datasets](day03/README.md)
 - [Day 4 - S3](day04/README.md)
+
+## pyenv
+
+To handle multiple Python versions use `pyenv`.
+
+To install `pyenv` use [pyenv-installer](https://github.com/pyenv/pyenv-installer):
+
+```sh
+curl https://pyenv.run | bash
+```
+
+Some useful commands:
+
+```sh
+# list installed versions
+pyenv versions
+# list available versions
+pyenv install --list
+# install version 3.8.9
+pyenv install 3.8.9
+# uninstall version 3.7.9
+pyenv uninstall 3.7.9
+# set local Python version
+pyenv local 3.8.9
+# set global Python version
+pyenv global 3.8.9
+# verify pyenv installation and development tools to build pythons.
+pyenv doctor
+```
