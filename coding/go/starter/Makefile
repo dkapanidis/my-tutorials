@@ -13,7 +13,7 @@ all: docs test install
 install: docs
 	govvv install -pkg go-starter/pkgs/store
 test: docs
-	./scripts/coverage.sh
+	go test ./...
 
 generate:
 	swag init
