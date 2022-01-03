@@ -18,4 +18,4 @@ In the past I've been collecting and creating tutorials on for each tech separat
 | Database      | [MySQL](db/mysql)       |
 | Message Queue | [RabbitMQ](mq/rabbitmq) |
 | ETL           | [Airflow](etl/airflow)  |
-| ETL           | [Jupyter](et/jupyter)   |
+| ETL           | [Jupyter](etl/jupyter)   |
