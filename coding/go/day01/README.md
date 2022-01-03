@@ -1,4 +1,4 @@
-# Go - Day1 - Basics
+# Go - Day 1 - Basics
 
 Check this [post](https://www.codingholygrail.com/learn-go-in-10-mins) for more details.
 
