@@ -18,6 +18,16 @@ To set zsh as your default shell, execute the following:
 sudo sh -c "echo $(which zsh) >> /etc/shells" && chsh -s $(which zsh)
 ```
 
+For Zsh Theme I use [powerlevel10k]:
+
+```sh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+```
+
+[powerlevel10k](https://github.com/romkatv/powerlevel10k)
+
+
 ## Useful CLI Tools
 
 Some generic CLI tools:
