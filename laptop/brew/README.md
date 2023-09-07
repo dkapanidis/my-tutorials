@@ -28,6 +28,10 @@ Run `brew doctor` every so often to make sure everything is ok with brew install
 
 Run `brew cleanup` every so often to remove old versions.
 
+### Brew Update
+
+Run `brew update` every so often to update all package definitions (formulae) and Homebrew itself.
+
 ### Brew Upgrade
 
 Run `brew upgrade` every so often to upgrade the installed apps.
